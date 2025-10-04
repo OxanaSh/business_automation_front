@@ -368,7 +368,7 @@
         <div
           class="btn-wrapper d-flex justify-content-between align-items-center flex-wrap"
         >
-          <button class="btn style-five">
+          <button @click="sellItems" class="btn style-five">
             Продати
             <img src="../../../assets/img/icons/cards.svg" alt="Image" />
           </button>
@@ -399,6 +399,32 @@ import {defineComponent, ref} from "vue";
 import SelectedProducts from "./SelectedProducts.vue";
 import QuantityCounter from "@/components/Purchases/CreatePurchase/QuantityCounter.vue";
 import axios from "axios";
+
+
+interface Apparel {
+  id: string,
+  type: string,
+  code_name: string,
+  colour: string,
+  size: string,
+  price: number,
+  warehouse: string,
+  brand: string,
+  date_added: string,
+  date_sold: string,
+  barcode: string,
+  selected: boolean,
+}
+
+interface Pack{
+  id: string,
+  date_added: string,
+  date_sold: string,
+  price: number,
+  apparels: Apparel[],
+  barcode: string,
+  selected: boolean,
+}
 
 export default defineComponent({
   name: "PosRightContent",
@@ -471,6 +497,41 @@ export default defineComponent({
           .catch(error => {
             console.log(error);
           })
+    },
+    sellItems(){
+      if(this.selectedApparels){
+        this.selectedApparels.forEach((apparel: Apparel) => {
+          axios
+              .post("/api/v1/sell_apparel_by_barcode/" + apparel.barcode)
+              .then(response => {
+                console.log(this.selectedApparels);
+              })
+              .catch(error => {
+                console.log(error);
+              });
+
+        });
+
+        this.selectedApparels = []
+
+      }
+
+      if(this.selectedPacks){
+        this.selectedPacks.forEach((pack: Pack) => {
+          axios
+              .post("/api/v1/sell_pack_by_barcode/" + pack.barcode)
+              .then(response => {
+                console.log(this.selectedPacks);
+              })
+              .catch(error => {
+                console.log(error);
+              });
+
+        });
+
+        this.selectedPacks = []
+      }
+
     },
   }
 });

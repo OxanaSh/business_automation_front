@@ -3,21 +3,12 @@
     <div class="row align-items-center">
       <div class="col-md-6">
         <div class="copyright-text">
-          <span class="text-white text-bold">&copy; Pyle</span> is proudly owned
-          by
-          <a
-            href="https://hibootstrap.com/"
-            target="_blank"
-            class="text-white text-bold"
-          >
-            HiBootstrap
-          </a>
+          <span class="text-white text-bold">&copy; 2025, жовтень</span>
         </div>
       </div>
       <div class="col-md-6">
         <p class="text-offwhite mb-0 text-md-end">
-          <span class="text-white text-bold">PYLE</span> - Ultimate Inventory
-          With <span class="text-white text-bold">POS</span>
+          <span class="text-white text-bold">Web app</span> - Point of Sale <span class="text-white text-bold">POS</span>
         </p>
       </div>
     </div>

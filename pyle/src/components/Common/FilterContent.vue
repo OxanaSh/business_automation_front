@@ -13,7 +13,7 @@
         <form action="#" class="search-area position-relative w-sm-100">
           <input
             type="text"
-            placeholder="Search On This Table"
+            placeholder="Розпочати пошук у таблиці"
             class="w-100 h-55 bg_ash border-0 rounded-1 fs-14 text-black bg-white"
             :value="searchWords_prop"
             @input="$emit('update:searchWords_prop', $event.target.value)"

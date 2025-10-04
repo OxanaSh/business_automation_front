@@ -4,8 +4,8 @@
   <div
     class="main-content bg_gray d-flex flex-column transition overflow-hidden"
   >
-    <BreadcrumbMenu pageTitle="Products List" />
-    <FilterContent @printBarcodeButtonPressed="handlePrintBarcodeButtonPressed" v-model:searchWords_prop="searchWords" ref="filterContent" btnText="Product" btnLink="/create-product" btn2Text="Створити пачку" btn2Link="/create-pack"/>
+    <BreadcrumbMenu pageTitle="Список товарів" />
+    <FilterContent @printBarcodeButtonPressed="handlePrintBarcodeButtonPressed" v-model:searchWords_prop="searchWords" ref="filterContent" btnText="Product" btnLink="/create-product" btn2Text="Створити товар" btn2Link="/create-pack"/>
     <ProductsList :searchWords="searchWords" ref="printBarcodeFunction"/>
 
     <div class="flex-grow-1"></div>

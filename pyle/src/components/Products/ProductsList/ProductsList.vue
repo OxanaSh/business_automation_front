@@ -120,9 +120,9 @@
                 {{ warehouseList.find((element) => pack.apparels[0]?.warehouse == element.id)?.name }}
                 </template>
               </td>
-              <td class="shadow-none lh-1 fs-12 fw-normal text-paragraph">
+              <td class="shadow-none lh-1 fs-16 fw-normal text-paragraph">
                 <template v-if="pack.date_sold">
-                  <p>Продано {{pack.date_sold}}</p>
+                  Продано
                 </template>
               </td>
               <td class="shadow-none lh-1 fs-16 fw-normal text-paragraph">
@@ -206,8 +206,8 @@
                   </template>
                 </td>
                 <td class="shadow-none lh-1 fs-12 fw-normal text-paragraph">
-                <template v-if="pack.date_sold">
-                  <p>Продано {{pack.date_sold}}</p>
+                <template v-if="apparel.date_sold">
+                  Продано
                 </template>
                 </td>
                 <td class="shadow-none lh-1 text-end pe-0">
